@@ -14,7 +14,6 @@ exports.signin = function(req, res, next) {
 };
 
 exports.signup = function(req, res, next) {
-  console.log(req.body);
   const { email, password, firstname, lastname } = req.body;
   if (!email || !password || !firstname || !lastname) {
     res.send(400).json({ msg: "Please enter all fields" });
@@ -36,4 +35,3 @@ exports.signup = function(req, res, next) {
     res.json({ token: tokenForUser(newUser) });
   });
 };
-

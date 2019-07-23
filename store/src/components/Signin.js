@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 export default class SignIn extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    error: ""
   };
 
   onChange = e => {
@@ -17,10 +18,15 @@ export default class SignIn extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-
-    const res = await axios.post("http://localhost:5000/signin", this.state);
-    if (res.data.token) {
-      this.props.history.push("/productList");
+    try {
+      const res = await axios.post("http://localhost:5000/signin", this.state);
+      if (res.data.token) {
+        this.props.history.push("/productList");
+      }
+    } catch (e) {
+      this.setState({
+        error: "Email or Password is invalid"
+      });
     }
   };
 
@@ -48,7 +54,7 @@ export default class SignIn extends Component {
                 value={this.state.password}
                 onChange={this.onChange}
               />
-
+              <p className="error">{this.state.error}</p>
               <button className="signin-btn">Sign In</button>
             </form>
             <p>
