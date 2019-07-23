@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "client-install": "npm install --prefix store",
-    "dev": "nodemon server.js",
+    "server": "nodemon server.js",
     "start": "node server.js",
     "client": "npm start --prefix store",
+    "dev": "concurrently \"npm run server\" \"npm run store\"",
+
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix store && npm run build --prefix store"
   },
   "author": "",
