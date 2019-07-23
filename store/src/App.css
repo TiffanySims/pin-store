@@ -135,6 +135,14 @@ input {
   padding: 15px 10px;
   border-radius: 50px;
 }
+
+.signuo-btn:focus,
+.signin-btn:focus,
+.shop:focus,
+input:focus {
+  outline: none;
+}
+
 .signup-h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -192,7 +200,6 @@ input {
 .footer {
   background-color: var(--mainBlue);
   width: 100%;
-  
 }
 
 .flex-container {
