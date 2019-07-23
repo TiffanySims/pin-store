@@ -28,7 +28,7 @@ class SignUp extends Component {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/signup", this.state);
+       await axios.post("http://localhost:5000/signup", this.state);
       this.setState(
         {
           auth: true
