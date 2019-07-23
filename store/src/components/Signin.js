@@ -18,7 +18,7 @@ export default class SignIn extends Component {
   handleSubmit = async e => {
     e.preventDefault();
 
-    const res = await axios.post("http://localhost:3002/signin", this.state);
+    const res = await axios.post("http://localhost:5000/signin", this.state);
     if (res.data.token) {
       this.props.history.push("/productList");
     }
