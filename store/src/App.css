@@ -5,6 +5,7 @@
   --mainDark: #2f195f;
   --mainYellow: #f596fa;
 }
+
 .navbar-brand {
   width: 39px;
   padding: 0 !important;
@@ -55,7 +56,8 @@ body {
 .hero {
   background-image: url("./components/malibu.jpg");
   background-position: center;
-  background-size: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
   height: 95vh;
 }
 .nav {
@@ -259,4 +261,14 @@ a:hover {
 .faq-h1 {
   text-align: center;
   margin: 30px 0;
+}
+
+@media only screen and (max-width: 960px) {
+  .box,
+  .signin-form {
+    width: 75%;
+  }
+  .flex-container {
+    width: 100%;
+  }
 }
