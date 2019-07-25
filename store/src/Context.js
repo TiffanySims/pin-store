@@ -16,6 +16,14 @@ class ProductProvider extends Component {
   };
   componentDidMount() {
     this.storeProducts();
+    const item = JSON.parse(localStorage.getItem("item"));
+    if (item) {
+      this.setState({
+        cart: item
+      },() => {
+        this.addTotals()
+      });
+    }
   }
   storeProducts = () => {
     let tempProducts = [];
@@ -41,7 +49,6 @@ class ProductProvider extends Component {
 
   addToCart = id => {
     let tempProducts = [...this.state.products];
-    console.log(tempProducts);
     const index = tempProducts.indexOf(this.getItem(id));
     const product = tempProducts[index];
     product.inCart = true;
@@ -54,6 +61,7 @@ class ProductProvider extends Component {
       },
       () => {
         this.addTotals();
+        localStorage.setItem("item", JSON.stringify(this.state.cart));
       }
     );
   };
@@ -93,21 +101,19 @@ class ProductProvider extends Component {
     const product = tempCart[index];
 
     product.count = product.count - 1;
-    if(product.count === 0){
-      this.removeItem(id)
-    }
-    else{
-    product.total = product.count * product.price;
+    if (product.count === 0) {
+      this.removeItem(id);
+    } else {
+      product.total = product.count * product.price;
 
-    this.setState(
-      () => {
-        return { cart: [...tempCart] };
-      },
-      () => {
-        this.addTotals();
-      }
-    );
-
+      this.setState(
+        () => {
+          return { cart: [...tempCart] };
+        },
+        () => {
+          this.addTotals();
+        }
+      );
     }
   };
 
@@ -131,6 +137,8 @@ class ProductProvider extends Component {
         };
       },
       () => {
+        localStorage.setItem("item", JSON.stringify(this.state.cart));
+
         this.addTotals();
       }
     );
@@ -156,7 +164,6 @@ class ProductProvider extends Component {
     const tempTax = subTotal * 0.1;
     const tax = parseFloat(tempTax.toFixed(2));
     const total = subTotal + tax;
-    console.log(subTotal);
     this.setState(() => {
       return {
         cartSubTotal: subTotal,

@@ -7,7 +7,7 @@ export default function About() {
       <Navbar />
       <div className="container about-container">
         <div>
-          <img src="img/owner.jpg" className="owner-pic" />
+          <img src="img/owner.jpg" className="owner-pic" alt="owner" />
           <p>
             <strong>qvware</strong>
           </p>
