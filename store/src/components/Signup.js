@@ -28,7 +28,7 @@ class SignUp extends Component {
     e.preventDefault();
 
     try {
-       await axios.post("http://localhost:5000/signup", this.state);
+      await axios.post("http://localhost:5000/signup", this.state);
       this.setState(
         {
           auth: true
@@ -49,7 +49,7 @@ class SignUp extends Component {
         <Navbar />
         <div className="signin-container">
           <div className="box">
-            <p>Be The First To Know Arrivals, Deals and Updates!</p>
+            <p>Be The First To Know about New Arrivals, Deals and Updates!</p>
             <h2 className="signup-h2">Sign Up its Free!</h2>
             <form className="signup" onSubmit={this.handleSubmit}>
               <input
@@ -88,9 +88,6 @@ class SignUp extends Component {
               <p className="error">{this.state.error}</p>
               <button className="signup-btn">Sign Up</button>
             </form>
-            <p>
-              Already Registered <Link to="/signin">Sign In</Link>
-            </p>
           </div>
         </div>
       </React.Fragment>
