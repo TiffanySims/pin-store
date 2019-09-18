@@ -2,6 +2,7 @@ const express = require("express");
 const jwt = require("jwt-simple");
 const config = require("../config");
 const User = require("../models/User");
+const Items = require("../models/Items");
 
 function tokenForUser(user) {
   const timestamp = new Date().getTime();
@@ -34,4 +35,10 @@ exports.signup = function(req, res, next) {
     }
     res.json({ token: tokenForUser(newUser) });
   });
+};
+
+exports.items = (req, res) => {
+  Items.find()
+    .then(items => res.json(items))
+    .catch(err => res.status(400).json("error"));
 };

@@ -55,10 +55,11 @@ body {
 
 .hero {
   background-image: url("./components/malibu.jpg");
+  background-color:white;
   background-position: center;
   background-size: 120%;
   background-repeat: no-repeat;
-  height: 95vh;
+  height: 90vh;
 }
 .nav {
   font-size: 20px;
@@ -270,5 +271,11 @@ a:hover {
   }
   .flex-container {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width:500px){
+  .ml-5{
+    margin-left: 0;
   }
 }

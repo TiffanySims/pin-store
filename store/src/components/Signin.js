@@ -38,6 +38,7 @@ export default class SignIn extends Component {
           <h1>Pin't Up</h1>
           <div className="signin-form">
             <h3>Sign In</h3>
+            <p> Sign In to receive your discount! </p>
             <form className="" onSubmit={this.handleSubmit}>
               <input
                 type="email"

@@ -26,6 +26,7 @@ https://www.iconfinder.com/Makoto_msk */}
               Sign Up
             </Link>
           </ButtonContainer>
+
           <ButtonContainer>
             <span>My Cart</span>
           </ButtonContainer>

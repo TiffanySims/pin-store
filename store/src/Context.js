@@ -18,11 +18,14 @@ class ProductProvider extends Component {
     this.storeProducts();
     const item = JSON.parse(localStorage.getItem("item"));
     if (item) {
-      this.setState({
-        cart: item
-      },() => {
-        this.addTotals()
-      });
+      this.setState(
+        {
+          cart: item
+        },
+        () => {
+          this.addTotals();
+        }
+      );
     }
   }
   storeProducts = () => {
