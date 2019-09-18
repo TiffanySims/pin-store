@@ -55,7 +55,7 @@ body {
 
 .hero {
   background-image: url("./components/malibu.jpg");
-  background-color:white;
+  background-color: white;
   background-position: center;
   background-size: 120%;
   background-repeat: no-repeat;
@@ -274,8 +274,12 @@ a:hover {
   }
 }
 
-@media only screen and (max-width:500px){
-  .ml-5{
-    margin-left: 0;
+@media only screen and (max-width: 500px) {
+  .ml-5 {
+    margin-left: 0 !important;
+  }
+  .owner-pic{
+    height:150px;
+    width:150px;
   }
 }
