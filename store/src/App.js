@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Switch>
-          <Route path='/' component={ProductList} />
+          <Route exact path='/' component={ProductList} />
           <Route path='/details' component={Details} />
           <Route path='/cart' component={Cart} />
           <Route path='/signin' component={Signin} />
